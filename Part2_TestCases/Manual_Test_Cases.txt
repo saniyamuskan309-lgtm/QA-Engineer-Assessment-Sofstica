@@ -1,0 +1,317 @@
+==Manual Test Cases – E2E Purchase Flow==
+
+1. User Registration (Positive)
+Test ID: TC_001
+Objective: Verify user can register with valid data
+Priority: P0
+Type: Functional
+Prerequisites: User is on the registration page
+Test Data: Valid email, strong password
+Test Steps:
+
+    1.Navigate to registration page
+    2.Enter valid email and password
+    3.Click Register
+
+Expected Results: User account is created, confirmation message displayed
+Acceptance Criteria: Registration successful; user redirected to login/dashboard
+
+2. User Registration (Negative)
+Test ID: TC_002
+Objective: Verify system prevents registration with an existing email
+Priority: P1
+Type: Functional
+Prerequisites: Existing account with the email
+Test Data: Email already registered
+Test Steps:
+
+    1.Navigate to registration page
+    2.Enter an existing email
+    3.Click Register
+
+Expected Results: Error message: “Email already exists”
+Acceptance Criteria: User cannot register with duplicate email
+
+3. Login (Positive)
+Test ID: TC_003
+Objective: Verify user can login with valid credentials
+Priority: P0
+Type: Functional
+Prerequisites: User account exists
+Test Data: Valid email/password
+Test Steps:
+
+    1.Navigate to login page
+    2.Enter valid credentials
+    3.Click Login
+
+Expected Results: User redirected to dashboard/home page
+Acceptance Criteria: Login successful; session started
+
+4. Login (Negative)
+Test ID: TC_004
+Objective: Verify login fails with incorrect password
+Priority: P1
+Type: Functional
+Prerequisites: User account exists
+Test Data: Valid email, invalid password
+Test Steps:
+
+    1.Navigate to login page
+    2.Enter valid email and wrong password
+    3.Click Login
+
+Expected Results: Error message displayed: “Invalid credentials”
+Acceptance Criteria: Login blocked for wrong password
+
+5. Product Search (Positive)
+Test ID: TC_005
+Objective: Verify user can search for an existing product
+Priority: P0
+Type: Functional/UI
+Prerequisites: User logged in
+Test Data: Valid product name
+Test Steps:
+
+    1.Enter product name in search bar
+    2.Click Search
+
+Expected Results: Product appears in search results
+Acceptance Criteria: Correct product listed
+
+6. Product Search (Negative – Invalid Product)
+Test ID: TC_006
+Objective: Verify search for non-existing product returns no results
+Priority: P1
+Type: Functional
+Prerequisites: User logged in
+Test Data: Invalid product name
+Test Steps:
+
+    1.Enter invalid product name in search bar
+    2.Click Search
+
+Expected Results: “No products found” message displayed
+Acceptance Criteria: Search returns no results
+
+7. Product Detail Page (Positive)
+Test ID: TC_007
+Objective: Verify product details are displayed correctly
+Priority: P0
+Type: Functional/UI
+Prerequisites: Product exists
+Test Data: Product from catalog
+Test Steps:
+
+    1.Click on a product
+    2.View product details
+
+Expected Results: Product name, price, description, and images displayed
+Acceptance Criteria: All product info visible
+
+8. Add to Cart (Positive)
+Test ID: TC_008
+Objective: Verify user can add a product to cart
+Priority: P0
+Type: Functional
+Prerequisites: Product exists
+Test Data: Any product, quantity = 1
+Test Steps:
+
+    1.Navigate to product page
+    2.Click Add to Cart
+
+Expected Results: Product added to cart; cart updated
+Acceptance Criteria: Cart shows correct product and quantity
+
+9. Add to Cart (Negative)
+Test ID: TC_009
+Objective: Verify adding quantity more than available stock shows error
+Priority: P1
+Type: Functional
+Prerequisites: Product with limited stock
+Test Data: Quantity > stock
+Test Steps:
+
+    1.Navigate to product page
+    2.Enter quantity exceeding stock
+    3.Click Add to Cart
+
+Expected Results: Error message displayed: “Quantity exceeds available stock”
+Acceptance Criteria: Product not added
+
+10. Cart Update Quantity (Positive)
+
+Test ID: TC_010_Cart_UpdateQuantity
+Objective: Verify user can update product quantity in cart
+Priority: P0
+Type: Functional
+Prerequisites: Product already in cart
+Test Data: Valid quantity
+Test Steps:
+
+    1.Go to cart
+    2.Update product quantity
+    3.Click Update Cart
+
+Expected Results: Cart reflects updated quantity and total price
+Acceptance Criteria: Cart updates correctly
+
+11. Cart Remove Product
+
+Test ID: TC_011_Cart_RemoveProduct
+Objective: Verify user can remove a product from the cart
+Priority: P0
+Type: Functional
+Prerequisites: Product already in cart
+Test Data: Any product in cart
+Test Steps:
+
+    1.Go to cart
+    2.Click Remove on a product
+
+Expected Results: Product removed; cart updated
+Acceptance Criteria: Cart shows correct products and total
+
+12. Checkout  (Positive)
+
+Test ID: TC_012_Checkout_ValidFlow
+Objective: Verify user can complete checkout with valid billing/shipping info
+Priority: P0
+Type: Functional
+Prerequisites: User logged in, product in cart
+Test Data: Valid billing/shipping info, valid payment method
+Test Steps:
+
+    1.Go to checkout
+    2.Enter valid billing/shipping details
+    3.Complete payment
+
+Expected Results: Order confirmation page displayed
+Acceptance Criteria: Order successful
+
+13. Checkout (Negative)
+
+Test ID: TC_013_Checkout_MissingInfo
+Objective: Verify checkout fails if required fields are missing
+Priority: P1
+Type: Functional
+Prerequisites: Product in cart
+Test Data: Leave mandatory billing fields empty
+Test Steps:
+
+    1.Go to checkout
+    2.Leave required fields blank
+    3.Click Place Order
+
+Expected Results: Error messages displayed
+Acceptance Criteria: Order not placed
+
+14. Checkout  (Negative) 
+
+Test ID: TC_014_Checkout_InvalidPayment
+Objective: Verify checkout fails with invalid payment details
+Priority: P1
+Type: Functional
+Prerequisites: Product in cart
+Test Data: Invalid credit card number
+Test Steps:
+
+    Go to checkout
+    Enter invalid payment details
+    Place order
+
+Expected Results: Payment declined message
+Acceptance Criteria: Order not placed
+
+15. Order Confirmation (Positive)
+
+Test ID: TC_015_Order_Confirmation
+Objective: Verify order confirmation page shows correct details
+Priority: P0
+Type: Functional/UI
+Prerequisites: Checkout completed
+Test Data: N/A
+Test Steps:
+
+    Complete checkout
+    View order confirmation
+Expected Results: Correct order summary and confirmation number displayed
+Acceptance Criteria: Order details accurate
+
+16. Cross-Browser (Chrome)
+
+Test ID: TC_016_CrossBrowser_Chrome
+Objective: Verify purchase flow works in Chrome
+Priority: P2
+Type: Functional/Compatibility
+Prerequisites: User logged in
+Test Data: Valid test user, product
+Test Steps:
+
+    Run entire flow in Chrome
+
+Expected Results: Flow completes without errors
+Acceptance Criteria: Works correctly on Chrome
+
+17. Cross-Browser (Firefox)
+
+Test ID: TC_017_CrossBrowser_Firefox
+Objective: Verify purchase flow works in Firefox
+Priority: P2
+Type: Functional/Compatibility
+Prerequisites: User logged in
+Test Data: Valid test user, product
+Test Steps:
+
+    Run entire flow in Firefox
+
+Expected Results: Flow completes without errors
+Acceptance Criteria: Works correctly on Firefox
+
+18. Boundary Case (Maximum Quantity)
+
+Test ID: TC_018_Cart_MaxQuantity
+Objective: Verify cart handles maximum allowed quantity correctly
+Priority: P1
+Type: Functional
+Prerequisites: Product in stock
+Test Data: Maximum allowed quantity
+Test Steps:
+
+    Add maximum quantity to cart
+
+Expected Results: Cart updated correctly
+Acceptance Criteria: Total and quantity calculated correctly
+
+19. Accessibility (Keyboard Navigation )
+
+Test ID: TC_019_Accessibility_Keyboard
+Objective: Verify all pages are navigable using keyboard only
+Priority: P2
+Type: Accessibility
+Prerequisites: User logged in
+Test Data: N/A
+Test Steps:
+
+    Navigate site using Tab/Shift+Tab
+    O pen product, add to cart, checkout
+
+Expected Results: All interactive elements accessible via keyboard
+Acceptance Criteria: Full keyboard navigation supported
+
+20. Accessibility (Screen Reade)
+
+Test ID: TC_020_Accessibility_ScreenReader
+Objective: Verify site content is readable via screen readers
+Priority: P2
+Type: Accessibility
+Prerequisites: Screen reader installed
+Test Data: N/A
+Test Steps:
+
+    Open pages using screen reader
+    Navigate product, cart, checkout pages
+    
+Expected Results: All elements read correctly
+Acceptance Criteria: Site usable by visually impaired users
