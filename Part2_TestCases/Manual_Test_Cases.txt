@@ -1,4 +1,4 @@
-==Manual Test Cases – E2E Purchase Flow==
+==Manual Test Cases (E2E Purchase Flow)==
 
 1. User Registration (Positive)
 Test ID: TC_001
@@ -312,6 +312,6 @@ Test Steps:
 
     Open pages using screen reader
     Navigate product, cart, checkout pages
-    
+
 Expected Results: All elements read correctly
 Acceptance Criteria: Site usable by visually impaired users
