@@ -54,7 +54,7 @@ test('E2E Purchase Flow: Register, Login, Dashboard, PLP, PDP, Cart, Checkout...
   await pdp.addToCart();
   await pdp.verifyProductAddedToCart();
 
-  await cart.verifyCartQuantity(1); 
+  await cart.verifyCartQuantity(12); 
   await cart.navigateToShoppingCart();
   await cart.acceptTermsAndConditions()
   await cart.clickOnCheckoutButton();

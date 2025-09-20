@@ -1,12 +1,15 @@
 # QA Engineer Assessment - Automation & Manual Testing
+
 ## Project Overview
 This project automates an **End-to-End (E2E) purchase flow** on the Demo Web Shop website (https://demowebshop.tricentis.com/) using **Playwright** with a **Page Object Model (POM)** structure. It covers **user registration, login, product selection, cart, checkout, and order confirmation** with dynamic test data.
+
 ## Tech Stack
 - **Language:** JavaScript (Node.js)  
 - **Framework:** Playwright  
 - **Architecture:** Page Object Model (POM)  
 - **Test Data:** Data-driven (dynamic emails, dummy billing/shipping data)  
 - **Assertions:** Playwright `expect`
+
 ## Folder Structure
 project-root/  
 ├── pages/  
@@ -24,12 +27,29 @@ project-root/
 ├── package.json  
 ├── playwright.config.js  
 └── README.md
+
 ## Setup Instructions
-1. **Clone the repository**: 
-git clone https://github.com/saniyamuskan309-lgtm/QA-Engineer-Assessment-Sofstica.git 
+1. **Clone the repository:**  
+git clone https://github.com/saniyamuskan309-lgtm/QA-Engineer-Assessment-Sofstica.git  
 cd Part1-TestAutomation  
-2. **Install dependencies**: npm ci , npx playwright install  
-3. **Run tests**: npx playwright test  
+
+2. **Install dependencies:**  
+npm ci  
+npx playwright install  
+
+3. **Run tests:**  
+npx playwright test  
+
 ## Notes
 - Ensure **Node.js** is installed (v16 or above recommended).  
 - Test data is dynamically generated to avoid duplicate user conflicts.  
+
+## Assumptions & Notes
+1. Automation uses dummy billing/shipping data.  
+2. Unique emails are generated automatically during test run.  
+3. Some payment methods are mocked; no real transaction occurs.  
+
+## Artifacts
+- **Screenshots:** Captured automatically on failure, stored in `test-results/` folder.  
+- **HTML Report:** Run the command:  
+npx playwright show-report
