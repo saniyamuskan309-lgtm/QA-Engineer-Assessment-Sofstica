@@ -1,27 +1,27 @@
-# Regression Testing Strategy – E-Commerce Application
+# Regression Testing Strategy (ECommerce Application )
 
-## Objective:
+## Objective :
 
-The goal of regression testing is to make sure that new changes, bug fixes or uupdates do not break the existing functionality of the ecommerce application. This ensures that the main features like registration, login, shopping and checkout continue to work correctly.
+The goal of regresssion testing is to make sure that new changes, bug fixes or uupdates do not break the existing functionality of the ecommerce application. This ensures that the main features like registration, login, shopping and checkout continue to work correctly
 
 ---
 
-## 1. Risk Assessment Matrix
+## 1. Risk Assessment Matrix:
 
-Wee need to focus on the most important features first. such as:
+Wee need to focus on the most important features first such as:
 
 | Feature / Module       |Criticality| Defect Probabi;ity | Impact        | Notes 
 |------------------------|-----------|-----------------|----------------|-------
 | User Registration      | High      | Medium          | High           | Users cannot sign up without it 
 | Login                 | High      | Medium          | High           | Critical for access 
 |  PLP                  | Medium    | Medium          | Medium         | Users need to find products easily 
-| PDP & Cart             | High      | High            | High           | Main purchase flow 
+| PDP & Cart             |  High      | High            | High           | Main purchase flow 
 | Checkout               | High      | High            | High           | Core revenue feature 
-| Order Confirmation     | Medium    | Low             | Medium         | Confirms purchase success 
+| Order Confirmation     |  Medium    | Low             | Medium         | Confirms purchase success 
 |  Dashboard             | Low       | Medium          | Low            | Additional info for user 
 | Cross-browser Support  | Medium    | Medium          | Medium         | Works on different browsers 
 
-**Analysis:** Focus testing on HIGH RISKK AREAS like registration, login, cart, checkout and payment. Medium-risk areas are product search, PDP and order confirmation.
+**Analysis:** Focus testing on HIGH RISKK AREAS like registration, login, cart, checkout and payment. Medium-risk areas are product search, PDP and order confirmation
 
 ---
 
@@ -38,17 +38,17 @@ These are the must-run tests for every new build:
 - Confirm order successfully  
 
 ### Full Regression vs Targeted Regression
-- **Full Regression:** Run all tests after major releases or backend changes.  
-- **Targeted Regression:** Run only tests related to areas that were changed after small updates or bug fixes.  
+- **Full Regression:** Run all tests after major releases or backend changes
+- **Targeted Regression:** Run only tests related to areas that were changed after small updates or bug fixes
 
 ### Automation vs Manual
 | Feature / Module       | Approach         |
 |------------------------|----------------|
-| Registration & Login   | Automated       |
+| Registration & Login    | Automated       |
 | Product Search & PLP   | Automated       |
-| PDP & Cart             | Automated       |
+| PDP & Cart              | Automated       |
 | Checkout & Payment     | Automated       |
-| Manual Exploratory     | Manual testing  |
+| Manual Exploratory    | Manual testing  |
 | Accessibility & Edge Cases | Manual testing |
 
 ---
@@ -57,13 +57,13 @@ These are the must-run tests for every new build:
 
 ### Test Case Prioritization
 1. **Critical paths:** Checkout, payment, registrationn
-2. **High-risk features:** Cart, product selection, login  
+2. **High-risk features:** Cart, product selection, logiin  
 3. **Medium-risk features:** Order confirmation, dashboard  
 
 ### Regression Suite Maintenance
-- Review the automated tests every month.  
-- Update test data when new products are added.  
-- Remove old or redundant test cases to keep the suite clean.  
+- Review the automated tests every month
+- Update test data when new products are added
+- Remove old or redundant test cases to keep the suite clean
 
 ### Execution Timeline Recommendations
 - Smoke tests: Daily after each build  
